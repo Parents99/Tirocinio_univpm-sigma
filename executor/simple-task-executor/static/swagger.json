@@ -1,0 +1,138 @@
+{
+    "servers": [
+        {
+            "url": "http://localhost:5000/simple-task-executor",
+            "description": "The development API server"
+        }
+    ],
+    "paths": {
+        "/executor/execute-script/": {
+            "post": {
+                "description": "api per l'esecuzione di uno script python",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ExecuteScript"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RetCodeData"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/venv/create-venv/": {
+            "post": {
+                "description": "api per la creazione di un venv",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateVenv"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RetCodeData"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "Simple Task Executor",
+        "version": "1.0.0"
+    },
+    "openapi": "3.0.3",
+    "components": {
+        "schemas": {
+            "ExecuteScript": {
+                "type": "object",
+                "properties": {
+                    "virtualEnv": {
+                        "type": "string"
+                    },
+                    "outputCoordinates": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "method": {
+                        "type": "string"
+                    },
+                    "inputCoordinates": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "scriptPath": {
+                        "type": "string"
+                    },
+                    "outputResult": {
+                        "type": "string"
+                    },
+                    "params": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "sessionId": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "method",
+                    "scriptPath",
+                    "sessionId"
+                ]
+            },
+            "RetCodeData": {
+                "type": "object",
+                "properties": {
+                    "ret_code": {},
+                    "ret_code_message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateVenv": {
+                "type": "object",
+                "properties": {
+                    "venvName": {
+                        "type": "string"
+                    },
+                    "requirements": {
+                        "type": "file"
+                    },
+                    "pythonVersion": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "venvName"
+                ]
+            }
+        }
+    }
+}

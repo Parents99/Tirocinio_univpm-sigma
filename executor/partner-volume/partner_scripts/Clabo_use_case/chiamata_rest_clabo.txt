@@ -1,0 +1,19 @@
+{
+	"sessionId": "428315699",
+	"scriptPath": "clabo_use_case.supDTexecutor_s3",
+	"virtualEnv": "venv-clabo",
+	"method": "execute",
+	"params": [],
+		"inputCoordinates": [
+		{
+			"sourceType": "s3",
+			"input_path": "datasets/CAMTEST_10048419_2022-05-06.txt",
+			"model_path":"models/finalized_model_042022.sav",
+			"bucket": "partner-volume-clabo"
+		}
+	],
+	"outputCoordinates": [{
+		"destType": "local_file"
+	}],
+	"outputResult": ""
+}

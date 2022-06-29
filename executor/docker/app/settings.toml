@@ -1,0 +1,44 @@
+#https://dynaconf.readthedocs.io/en/docs_223/guides/usage.html
+
+[default.general]
+url_root="/simple-task-executor"
+
+[default.s3]
+aws_access_key_id="123456123"
+aws_secret_access_key='987654321'
+endpoint_url='http://192.168.56.101:9001'
+
+[default.pg_psycopg]
+host="172.17.0.1"
+port="5432"
+db="test_db"
+user="postgres"
+pwd="prova"
+
+[default.pg_sqlalchemy]
+host="10.200.61.214"
+port="32650"
+db="cube"
+user="cube"
+pwd="cubeinside22"
+
+[default.kafka]
+host="10.200.61.214"
+port="31217"
+
+[default.venv]
+python_version = "python3"
+
+[default.logger]
+log_file = "log/ste.log"
+log_conf_file = "logging.conf"
+
+[development]
+
+[staging]
+
+[testing]
+
+[production]
+
+[global]

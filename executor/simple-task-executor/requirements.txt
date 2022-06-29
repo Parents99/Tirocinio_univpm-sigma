@@ -1,0 +1,8 @@
+flask
+marshmallow
+marshmallow-enum
+flask-restx
+flask-swagger-ui
+apispec-webframeworks
+dynaconf
+

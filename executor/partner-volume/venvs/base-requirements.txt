@@ -1,0 +1,5 @@
+boto3
+kafka-python
+psycopg2-binary
+sqlalchemy
+dynaconf

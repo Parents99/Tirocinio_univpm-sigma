@@ -1,0 +1,1 @@
+start cmd /k "cd %PARTNER_VOLUME_PATH%\\venvs & pip install virtualenv & virtualenv -p %1 %2 & %2\\Scripts\\activate & pip install -r base-requirements.txt & pip install -r requirements.txt & deactivate"
